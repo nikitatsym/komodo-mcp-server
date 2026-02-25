@@ -132,6 +132,9 @@ export const frameworkEnvSchema = z.object({
     })
     .optional(),
 
+  /** Session timeout in milliseconds (default: 1800000 = 30 minutes) */
+  MCP_SESSION_TIMEOUT_MS: z.coerce.number().min(60000).default(30 * 60 * 1000),
+
   /** Rate limit window in milliseconds (default: 900000 = 15 minutes) */
   MCP_RATE_LIMIT_WINDOW_MS: z.coerce.number().min(1000).default(900000),
 

@@ -66,7 +66,10 @@ export function createExpressApp(mcpServerFactory: () => McpServer): {
   sessionManager: TransportSessionManager;
 } {
   const app = express();
-  const sessionManager = new TransportSessionManager();
+  const frameworkEnv = parseFrameworkEnv();
+  const sessionManager = new TransportSessionManager({
+    timeoutMs: frameworkEnv.MCP_SESSION_TIMEOUT_MS,
+  });
 
   // ===== Global Middleware =====
   app.use(
