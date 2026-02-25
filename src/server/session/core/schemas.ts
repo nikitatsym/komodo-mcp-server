@@ -47,8 +47,8 @@ import {
 export const SESSION_CONFIG_LIMITS = {
   /** Minimum session timeout (1 minute) */
   MIN_TIMEOUT_MS: 60_000,
-  /** Maximum session timeout (24 hours) */
-  MAX_TIMEOUT_MS: 24 * 60 * 60 * 1000,
+  /** Maximum session timeout (5 years) */
+  MAX_TIMEOUT_MS: 5 * 365 * 24 * 60 * 60 * 1000,
 
   /** Minimum cleanup interval (10 seconds) */
   MIN_CLEANUP_INTERVAL_MS: 10_000,
@@ -80,7 +80,7 @@ export const SESSION_CONFIG_LIMITS = {
  */
 export const SESSION_VALIDATION_MESSAGES = {
   TIMEOUT_MIN: `Session timeout must be at least ${SESSION_CONFIG_LIMITS.MIN_TIMEOUT_MS}ms (1 minute)`,
-  TIMEOUT_MAX: `Session timeout must be at most ${SESSION_CONFIG_LIMITS.MAX_TIMEOUT_MS}ms (24 hours)`,
+  TIMEOUT_MAX: `Session timeout must be at most ${SESSION_CONFIG_LIMITS.MAX_TIMEOUT_MS}ms (5 years)`,
   TIMEOUT_TYPE: 'Session timeout must be a positive integer',
 
   CLEANUP_MIN: `Cleanup interval must be at least ${SESSION_CONFIG_LIMITS.MIN_CLEANUP_INTERVAL_MS}ms (10 seconds)`,
